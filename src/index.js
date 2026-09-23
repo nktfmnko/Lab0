@@ -5,10 +5,16 @@ function f(x) {
 }
 
 let x1 = parseInt(prompt("Левая граница"))
-let x2 = parseInt(prompt("Правая граница"))
+while (isNaN(x1)) {
+    x1 = parseInt(prompt("Введите корректную левую границу"))
+}
 
-while (x1 >= x2) {
-    x2 = parseInt(prompt(`Правая граница должна быть больше ${x1}`))
+let x2 = parseInt(prompt("Правая граница"))
+while (isNaN(x2)) {
+    x2 = parseInt(prompt("Введите корректную правую границу"))
+}
+if (x1 > x2) {
+    [x1, x2] = [x2, x1]
 }
 
 const n = 10_000
